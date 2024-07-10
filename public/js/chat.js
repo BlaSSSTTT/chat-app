@@ -11,7 +11,9 @@ const locationTemplate = document.getElementById("location-template").innerHTML;
 const sidebarTemplate = document.getElementById("sidebar-template").innerHTML;
 
 const {username, room} = Qs.parse(location.search,{ignoreQueryPrefix:true})
-
+if(!username||!room){
+    location.href="/"
+}
 
 $messageForm.addEventListener("submit",(e)=>{
     e.preventDefault();
